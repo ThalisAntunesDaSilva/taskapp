@@ -9,16 +9,21 @@
 <h:body>
 	<h:form>
 
+		<h1>Ola mundo</h1>;
+		Nome:
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"/>
 
+		<br />
 
-<h:outputText value="testejsf"/>
+		<h:commandButton binding="#{pessoaBean.commandButton}"
+			value="Add Nome" action="#{pessoaBean.addNome}" id="buttonName"/>
 
+		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
+			<h:column>
+				<h:outputText value="#{nome}" />
+			</h:column>
 
-<h:button/>
-
-<h:inputText value="escreva"/>
-
-
+		</h:dataTable>
 	</h:form>
 </h:body>
 
