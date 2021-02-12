@@ -3,53 +3,38 @@ package br.com.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
-import br.com.bean.Task;
-import br.com.connection.ConnectionFactory;
+import br.com.entidades.Task;
+import br.com.jpautil.ConnectionFactory;
 
-public class TaskDAO {
+public class TaskDAO<T> {
 
-	public Task save(Task task) {
-		EntityManager em = new ConnectionFactory().getConnection();
-
-		try {
-			em.getTransaction().begin();
-
-			if (task.getId() == null) {
-				em.persist(task);
-			} else {
-				em.merge(task);
-			}
-
-			em.getTransaction().commit();
-
-		} catch (Exception e) {
-			System.err.println(e);
-			em.getTransaction().rollback();
-		} finally {
-			em.close();
-		}
-		return task;
+	public void salvar(T entidade) {
+		EntityManager entityManager = ConnectionFactory.getEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+		entityManager.persist(entidade);
+		entityTransaction.commit();
+		entityManager.close();
 	}
 
-	public Task findById(Integer id) {
+	public T merge(T entidade) {
+		EntityManager entityManager = ConnectionFactory.getEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
 
-		EntityManager em = new ConnectionFactory().getConnection();
-		Task task = null;
+		T retorno = entityManager.merge(entidade);
+		entityTransaction.commit();
+		entityManager.close();
 
-		try {
-			task = em.find(Task.class, id);
-		} catch (Exception e) {
-			System.err.println(e);
-		} finally {
-			em.close();
-		}
-		return task;
+		return retorno;
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Task> findAll() {
-		EntityManager em = new ConnectionFactory().getConnection();
+		@SuppressWarnings("static-access")
+		EntityManager em = new ConnectionFactory().getEntityManager();
 		List<Task> tasks = null;
 
 		try {
@@ -67,8 +52,24 @@ public class TaskDAO {
 
 	}
 
+	public Task findById(Integer id) {
+		@SuppressWarnings("static-access")
+		EntityManager em = new ConnectionFactory().getEntityManager();
+		Task task = null;
+
+		try {
+			task = em.find(Task.class, id);
+		} catch (Exception e) {
+			System.err.println(e);
+		} finally {
+			em.close();
+		}
+		return task;
+	}
+
 	public Task remove(Integer id) {
-		EntityManager em = new ConnectionFactory().getConnection();
+		@SuppressWarnings("static-access")
+		EntityManager em = new ConnectionFactory().getEntityManager();
 		Task task = null;
 		try {
 			task = em.find(Task.class, id);
@@ -82,6 +83,18 @@ public class TaskDAO {
 			em.close();
 		}
 		return task;
+	}
+
+	public List<T> getListEntity(Class<Task> task) {
+		EntityManager entityManager = ConnectionFactory.getEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+
+		@SuppressWarnings("unchecked")
+		List<T> retorno = entityManager.createQuery("from " + task.getName()).getResultList();
+		entityTransaction.commit();
+		entityManager.close();
+		return retorno;
 	}
 
 }
