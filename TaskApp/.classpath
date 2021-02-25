@@ -26,6 +26,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-api-2.2.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-impl-2.2.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-5.0.jar"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="test" value="true"/>
@@ -33,5 +34,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/thalissilva/.m2/repository/org/primefaces/primefaces/5.0/primefaces-5.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -2,51 +2,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:p="http://primefaces.org/ui">
+
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<h:outputStylesheet name="css/style.css" />
+	<h:outputStylesheet name="css/home.css" />
 	<h:outputStylesheet name="css/global.css" />
-	<title>Ficha Tecnica</title>
+	<h:outputStylesheet name="css/flexboxgrid.min.css" />
+	<title>Home</title>
 
 </h:head>
 
-<h:body styleClass="corpo">
+<h:body styleClass="body col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 
-	<h:form styleClass="cabecalho">
-	</h:form>
-	<h:form styleClass="forma">
 
-		<h:outputLabel styleClass="rotulo" value="ID" />
-		<br />
-		<h:inputText styleClass="entrada" value="#{taskBean.task.id}" />
-		<br />
-		<h:outputLabel styleClass="rotulo" value="Título" />
-		<br />
-		<h:inputText styleClass="entrada" value="#{taskBean.task.titulo}"></h:inputText>
-		<br />
-		<h:outputLabel styleClass="rotulo" value="Descrição" />
-		<br />
-		<h:inputTextarea styleClass="entradaDescricao"
-			value="#{taskBean.task.descricao}"></h:inputTextarea>
-		<br />
+	<h:form styleClass="overview col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		
-		<h:body styleClass="formaBotao">
-		<h:commandButton value="Salvar" styleClass="botao"
-			action="#{taskBean.salvar}" />
-		<br />
-		<h:commandButton value="Novo" styleClass="botao"
-			action="#{taskBean.novo}" />
-		<br />
-		<h:commandButton value="Remover" styleClass="botao"
-			action="#{taskBean.remove}" />
-	</h:body>
-	
-	</h:form>
-	
+			<h:dataTable styleClass="tabela" value="#{taskBean.tarefas}" var="t">
 
+		<h:column>
+			<h:outputText styleClass="rotulotabela" value="ID: " />
+			<h:outputText styleClass="conteudo" value="#{t.id}" />
+		</h:column>
+		<h:column>
+			<h:outputText styleClass="rotulotabela" value="Título: " />
+			<h:outputText styleClass="conteudo" value="#{t.titulo}" />
+		</h:column>
+		<h:column>
+			<h:outputText styleClass="rotulotabela" value="Descrição: " />
+			<h:outputText value="#{t.descricao}" />
+		</h:column>
+		<h:column>
+			<h:outputText styleClass="rotulotabela" value="Data: " />
+			<h:outputText styleClass="conteudo" value="#{t.data}" />
+		</h:column>
+
+	</h:dataTable>
+		
+		
+		<h:commandButton styleClass="button" value="Adicionar Tarefa" />
+		<p:outputLabel styleClass="visaogeral-horario" value="09:00" />
+		<p:outputLabel styleClass="visaogeral-tituloTask"
+			value="Review de Sprint" />
+		<p:outputLabel styleClass="visaogeral-horario" value="09:00" />
+		<p:outputLabel styleClass="visaogeral-tituloTask"
+			value="Review de Sprint" />
+			
+			
 	<h:dataTable styleClass="tabela" value="#{taskBean.tarefas}" var="t">
 
 		<h:column>
@@ -67,9 +71,71 @@
 		</h:column>
 
 	</h:dataTable>
+			
+			
+
+		<h:commandButton styleClass="button-filter" value="Hoje" />
+		<h:commandButton styleClass="button-filter" value="Semana" />
+		<h:commandButton styleClass="button-filter" value="Mes" />
+	</h:form>
+
+	<h:form styleClass="dashboard">
+
+
+		<p:outputLabel styleClass="dashboard-id" value="ID" />
+		<p:outputLabel styleClass="dashboard-titulo" value="Título" />
+		<p:outputLabel styleClass="dashboard-status" value="Status" />
+
+
+
+
+	</h:form>
+	<h:form styleClass="task1">
+
+
+		<p:outputLabel styleClass="dashboard-id" value="01" />
+		<p:outputLabel styleClass="dashboard-titulo" value="Review Sprint" />
+		<p:outputLabel styleClass="dashboard-status" value="Em andamento" />
+
+
+
+
+	</h:form>
+
+	<h:form styleClass="task2">
+
+
+		<p:outputLabel styleClass="dashboard-id" value="02" />
+		<p:outputLabel styleClass="dashboard-titulo" value="Testes unitários" />
+		<p:outputLabel styleClass="dashboard-status" value="Finalizado" />
+
+
+
+
+	</h:form>
+
+	<h:form styleClass="task3">
+
+
+		<p:outputLabel styleClass="dashboard-id" value="03" />
+		<p:outputLabel styleClass="dashboard-titulo" value="Refatoração" />
+		<p:outputLabel styleClass="dashboard-status" value="A fazer" />
+
+
+
+
+	</h:form>
+
+
+
+
+
+
+
+
+
 
 </h:body>
-
 
 
 </html>

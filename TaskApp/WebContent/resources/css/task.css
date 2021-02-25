@@ -1,0 +1,45 @@
+.body {
+	color: #ffffff;
+	margin: 4vh 4vw 4vh 4vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.body .top {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.body .button {
+	width: 140px;
+	height: 40px;
+	margin: 3vh 3vw 3vh 3vw;
+	border-style: none;
+	background-color: blue;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+}
+
+.body .descricao {
+	width: 90%;
+	height: auto;
+	background-color: grey;
+	margin: 4vh 4vw 4vh 4vw;
+	padding: 6vh 8vw 6vh 8vw;
+	border-radius: 20px;
+	font-size: 20px;
+}
+
+.body .statusBar {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 20px;
+}

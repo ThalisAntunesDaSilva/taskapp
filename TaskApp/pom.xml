@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>meuprimeirorprojetojsf</groupId>
-	<artifactId>meuprimeirorprojetojsf</artifactId>
+	<artifactId>TaskApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>meuprimeirorprojetojsf</name>
@@ -81,15 +81,20 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 <dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>18.0</version>
+    <groupId>org.primefaces</groupId>
+    <artifactId>primefaces</artifactId>
+    <version>5.0</version>
 </dependency>
-	
-	
-	
+		
+
+
+
+
+
+
 
 	</dependencies>
 

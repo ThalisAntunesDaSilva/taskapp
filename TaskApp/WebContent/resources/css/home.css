@@ -1,0 +1,92 @@
+.body {
+	margin: 4vh 4vw 4vh 4vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 20vh 15vh 15vh 15vh;
+}
+
+.body .overview {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: grey;
+	height: 90vh;
+	width: 30vw;
+	border-radius: 1%;
+}
+
+.body .button {
+	width: 140px;
+	height: 40px;
+	margin: 3vh 3vw 3vh 3vw;
+	border-style: none;
+	background-color: blue;
+	border-radius: 10%;
+	color: white;
+}
+
+.body .tabela{
+	grid-row: 2/2;
+	grid-column: 1/1;
+}
+
+.body .button-filter {
+	background-color: black;
+	width: 140px;
+	height: 40px;
+	margin: 3vh 3vw 3vh 3vw;
+	border-style: none;
+	border-radius: 10%;
+	color: white;
+	cursor: pointer;
+}
+
+.body .dashboard, .task1, .task2, .task3 {
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2vh 1vw 2vh 1vw;
+	background-color: grey;
+	border-radius: 10%;
+}
+
+.body .dashboard {
+	background-color: #000000;
+	grid-row: 1/1;
+	grid-column: 2/2;
+	
+}
+
+.body .task1 {
+	grid-row: 2/2;
+	grid-column: 2/2;
+}
+
+.body .task2 {
+	grid-row: 3/3;
+	grid-column: 2/2;
+}
+
+.body .task3 {
+	grid-row: 4/4;
+	grid-column: 2/2;
+}
+
+.body .task1  .dashboard-id {
+	font-weight: bold;
+}
+
+.body .task2  .dashboard-id {
+	font-weight: bold;
+}
+
+.body .task3  .dashboard-id {
+	font-weight: bold;
+}
+
+.body .dashboard  .dashboard-id {
+	font-weight: bold;
+}

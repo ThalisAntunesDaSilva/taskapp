@@ -1,0 +1,42 @@
+.body {
+	display: flex;
+	flex-direction:row;
+	color: white;
+	justify-content: space-around;
+	align-items: center;
+	margin: 4vh 4vw 4vh 4vw;
+	font-size: 20px;
+}
+
+.body .left {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.body .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 10vh 4vw 4vh 4vw;
+	
+}
+
+.body .button {
+	width: 140px;
+	height: 40px;
+	margin: 3vh 3vw 3vh 3vw;
+	border-style: none;
+	background-color: blue;
+	border-radius: 10%;
+	color: white;
+	cursor: pointer;
+}
+
+.body .input{
+	margin: 2vh 2vw 2vh 2vw;
+}
+
