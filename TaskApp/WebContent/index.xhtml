@@ -20,29 +20,10 @@
 
 	<h:form styleClass="overview col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		
-			<h:dataTable styleClass="tabela" value="#{taskBean.tarefas}" var="t">
-
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="ID: " />
-			<h:outputText styleClass="conteudo" value="#{t.id}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Título: " />
-			<h:outputText styleClass="conteudo" value="#{t.titulo}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Descrição: " />
-			<h:outputText value="#{t.descricao}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Data: " />
-			<h:outputText styleClass="conteudo" value="#{t.data}" />
-		</h:column>
-
-	</h:dataTable>
+	
 		
 		
-		<h:commandButton styleClass="button" value="Adicionar Tarefa" />
+		<h:commandButton styleClass="button" value="Adicionar Tarefa" action="addTask?faces-redirect=true" />
 		<p:outputLabel styleClass="visaogeral-horario" value="09:00" />
 		<p:outputLabel styleClass="visaogeral-tituloTask"
 			value="Review de Sprint" />
@@ -51,27 +32,9 @@
 			value="Review de Sprint" />
 			
 			
-	<h:dataTable styleClass="tabela" value="#{taskBean.tarefas}" var="t">
+	
 
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="ID: " />
-			<h:outputText styleClass="conteudo" value="#{t.id}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Título: " />
-			<h:outputText styleClass="conteudo" value="#{t.titulo}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Descrição: " />
-			<h:outputText value="#{t.descricao}" />
-		</h:column>
-		<h:column>
-			<h:outputText styleClass="rotulotabela" value="Data: " />
-			<h:outputText styleClass="conteudo" value="#{t.data}" />
-		</h:column>
-
-	</h:dataTable>
-			
+		
 			
 
 		<h:commandButton styleClass="button-filter" value="Hoje" />
@@ -90,17 +53,18 @@
 
 
 	</h:form>
-	<h:form styleClass="task1">
-
-
+	
+	<h:link styleClass="task1" outcome="/task" >
 		<p:outputLabel styleClass="dashboard-id" value="01" />
 		<p:outputLabel styleClass="dashboard-titulo" value="Review Sprint" />
 		<p:outputLabel styleClass="dashboard-status" value="Em andamento" />
+</h:link>
 
 
 
 
-	</h:form>
+	
+			
 
 	<h:form styleClass="task2">
 
@@ -113,6 +77,11 @@
 
 
 	</h:form>
+	
+	
+	
+	
+	
 
 	<h:form styleClass="task3">
 

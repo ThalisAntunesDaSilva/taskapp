@@ -17,6 +17,7 @@ public class TaskDAO<T> {
 		entityManager.persist(entidade);
 		entityTransaction.commit();
 		entityManager.close();
+		
 	}
 
 	public T merge(T entidade) {
