@@ -1,12 +1,12 @@
-# TaskApp
+#TaskApp
 
 Aplicação para gerenciamento de tarefas
 
-## Tecnologia
+##Tecnologia
 
 Java 1.7, JPA Hibernate, JSF, Primefaces
 
-## Requisitos
+##Requisitos
 
 Java 1.7
 
@@ -14,7 +14,7 @@ Xammp
 
 Apache-Tomcat
 
-## Construindo
+##Construindo
 
 - Adicionar os JARS que foram baixados pelo maven  de JSF  e PrimeFacesna pasta libs em META-INF
 - Referencia-los em Build Path
