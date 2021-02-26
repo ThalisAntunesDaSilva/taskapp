@@ -1,0 +1,25 @@
+# TaskApp
+
+Aplicação para gerenciamento de tarefas
+
+## Tecnologia
+
+Java 1.7, JPA Hibernate, JSF, Primefaces
+
+## Requisitos
+
+Java 1.7
+
+Xammp
+
+Apache-Tomcat
+
+## Construindo
+
+- Adicionar os JARS que foram baixados pelo maven  de JSF  e PrimeFacesna pasta libs em META-INF
+- Referencia-los em Build Path
+- Adicione em Lib do seu servidor Tomcat
+- Inicie seu servidor MySQL em Xammp
+- Inicie a aplicação com servidor Tomcat
+
+A aplicação estará disponível em localhost:8080/TaskApp

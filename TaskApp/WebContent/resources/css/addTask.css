@@ -4,7 +4,7 @@
 	color: white;
 	justify-content: center;
 	align-items: center;
-	margin: 4vh 4vw 4vh 4vw;
+	margin: 9vh 4vw 4vh 4vw;
 	font-size: 20px;
 }
 
@@ -34,9 +34,22 @@
 	border-radius: 10%;
 	color: white;
 	cursor: pointer;
+	font-size: 15px;
 }
 
 .body .input{
 	margin: 2vh 2vw 2vh 2vw;
+	background-color: grey;
+	height: 4vh;
+	width: 30vw;
+	
+}
+
+.body .inputArea{
+		margin: 2vh 2vw 2vh 2vw;
+	background-color: grey;
+	height: 25vh;
+	width: 30vw;
+	
 }
 
